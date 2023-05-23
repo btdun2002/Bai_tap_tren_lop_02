@@ -28,13 +28,11 @@ int main(int argc, char *argv[])
     }
 
     struct sockaddr_in addr_s;
-    memset(&addr_s, 0, sizeof(addr_s));
     addr_s.sin_family = AF_INET;
     addr_s.sin_addr.s_addr = inet_addr(argv[1]);
     addr_s.sin_port = htons(atoi(argv[2]));
 
     struct sockaddr_in addr_r;
-    memset(&addr_r, 0, sizeof(addr_r));
     addr_r.sin_family = AF_INET;
     addr_r.sin_addr.s_addr = htonl(INADDR_ANY);
     addr_r.sin_port = htons(atoi(argv[3]));
